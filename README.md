@@ -62,6 +62,16 @@ To import existing Kubernetes resources into the Terraform state for above usage
 terraform import 'kustomization_resource.test["apps_v1_Deployment|test-basic|test"]' 'apps_v1_Deployment|test-basic|test'
 ```
 
+## Using the provider binaries
+
+To use binaries built for tags, go to the tags page, download the `.tgz` for the version and OS you would like to use, unzip it using `tar -zxvf XXX.tgz` where `XXX` is the name of the version downloaded, and copy the `terraform.d/plugins/darwin_amd64/terraform-provider-kustomization` binary, into your local folder `~/terraform.d/plugins/darwin_amd64/terraform-provider-kustomization`
+
+If your local `~/terraform.d/plugins/` does not yet exist, you can create it using the command below
+
+```
+mkdir -p ~/terraform.d/plugins/
+```
+
 ## Building and Developing the Provider
 
 To work on the provider, you need go installed on your machine (version 1.13.x tested). The provider uses go mod to manage its dependencies, so GOPATH is not required.
